@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, HashRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -48,7 +48,7 @@ componentWillUnmount() {
     return (
       <div>
         <Header  />
-        <Switch>
+        <HashRouter basename='/'>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
           <Route expact path='/checkout' component={CheckoutPage}/>
@@ -59,7 +59,7 @@ componentWillUnmount() {
           )
           }
         />
-        </Switch>
+        </HashRouter>
         </div>
     );
 }
